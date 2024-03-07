@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/Udacity_js_intro/Udacity_js_3_concsole.js"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/fangsiyu/Desktop/program design CCU",
+      "program": "/Users/fangsiyu/Desktop/program design CCU/build/Debug/outDebug"
+    }
+  ]
+}

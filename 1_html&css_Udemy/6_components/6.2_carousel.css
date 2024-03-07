@@ -1,0 +1,124 @@
+/*
+            SPACING SYSTEM (px)
+            2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+            FONT SIZE SYSTEM (px)
+            10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+            */
+/*
+            main color = #087f5b
+            gray text = #343a40
+            */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* it's strange that without this, the display turn good?? */
+}
+
+/* ------------------------ */
+/* GENERAL STYLES */
+/* ------------------------ */
+body {
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  line-height: 1;
+}
+.carousel {
+  width: 800px;
+  margin: 100px auto;
+  background-color: #087f5b;
+  padding: 32px 48px 32px 86px;
+
+  border-radius: 8px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  /*  here use another way to center the item */
+  gap: 86px;
+}
+
+img {
+  height: 200px;
+  border-radius: 8px;
+  transform: scale(1.5);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+
+  /* display: block;
+  align-items: center;
+  justify-content: center; */
+}
+
+.testimonial-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  color: #e6fcf5;
+}
+.testimonial-author {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #c3fae8;
+}
+.testimonial-job {
+  font-size: 12px;
+  color: #c3fae8;
+}
+.btn {
+  background-color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+  /* the step below center the icon inside the white circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* this step  center the element, without using flexbox 
+    which is a imporntent technic when you want an element be absulote */
+.btn--left {
+  left: 0;
+  top: 50%; /* move the element dowward, by 50% of the parent elment*/
+  transform: translate(-50%, -50%); /* the (x, y)*/
+  /* the  -50% here is to upward the element, by 50% of its height*/
+}
+.btn--right {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+.btn-icon {
+  height: 24px;
+  width: 24px;
+  stroke: #087f5b;
+}
+
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 32px);
+
+  display: flex;
+  gap: 12px;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  border: 2px solid #087f5b;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot--fill {
+  background-color: #087f5b;
+}

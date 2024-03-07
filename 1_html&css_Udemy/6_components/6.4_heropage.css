@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Rubik", sans-serif;
+  color: #444;
+}
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+header {
+  /* background-color: #e67e22; */
+  height: 100vh;
+  position: relative;
+
+  background-image: linear-gradient(
+      rgba(34, 34, 34, 0.6),
+      rgba(34, 34, 34, 0.6)
+    ),
+    url(hero.jpg);
+  /* beaware the ',' inside the rgba() */
+  background-size: cover;
+  color: #fff;
+}
+
+nav {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  /* background-image: linear-gradient(to right, red, blue); */
+  /* not background-color, but image */
+  padding-top: 32px;
+}
+
+.header-container {
+  width: 1200px;
+  position: absolute;
+  /* relate to the PARENTsize */
+  left: 50%;
+  top: 50%;
+  /* relate to the ELEMENT size */
+  transform: translate(-50%, -50%);
+}
+
+/* 96. part2(9:22), by create another <div>, and change the width to50% */
+.header-container-inner {
+  width: 50%;
+}
+
+h1 {
+  font-size: 52px;
+  margin-bottom: 32px;
+  line-height: 1.05;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #e67e22;
+  color: white;
+  text-decoration: none;
+
+  display: inline-block;
+
+  padding: 16px 32px;
+  border-radius: 9px;
+}
+
+h2 {
+  font-size: 44px;
+  margin-bottom: 48px;
+}
+
+section {
+  padding: 96px 0;
+}

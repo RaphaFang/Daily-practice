@@ -1,0 +1,233 @@
+* {
+  /* universal selecter */
+  margin: 0;
+  padding: 0;
+}
+/*by doing this, you set the default web layout*/
+
+/*collapsing margines 
+means, if there are two items with margines that sidebyside,
+only the biggest one will display
+it wll merge in one margine
+*/
+
+/*recap
+if there's element like background or border, use padding
+else just add space, use margin
+*/
+nav {
+  text-align: center;
+}
+
+body {
+  color: #444;
+  font-family: sans-serif;
+  position: relative;
+  /*the parent-element of button-element shold be relative */
+  /* otherwise, the button element will focus on the viewer-view */
+}
+
+/*  the child-element, can't bigger than the parent-element */
+.container {
+  width: 700px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* but you can als write */
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-style: italic;
+  background-color: #f7f7f7;
+}
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
+/* it might not display acture pic in the layout of wed terminal
+but it still work
+*/
+.post-img {
+  /* width: 800px; */
+  width: 100%;
+  /* this will auto adjest the width by the size of your page */
+  height: auto;
+}
+.post-header {
+  margin-bottom: 40px;
+}
+h2 {
+  font-size: 40px; /*becareful to put "px"*/
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+li:last-child {
+  margin-bottom: 0;
+}
+/* article footer p {
+  font-size: 16px;
+} */
+
+/* article header p {
+  /*workable but not suggested, insteed, do this below
+  font-style: italic;
+  font-size: 18px;
+}*/
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+/*The reason to use "class" not "id" is because "id" could be called only on one element*/
+/*always use class*/
+
+aside {
+  background-color: #f7f7f7;
+  border: 5px solid #1098ad;
+  padding: 50px 0px;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+/* aaa:bbb{}
+  which will scan all the aaa elements which require bbb attribute.
+  e.g. nth-child(input num, or "odd" "even")
+*/
+
+/* this won't work
+because p isn't the first-child in the artical, header is
+or, you have to do "header p:nth-child(3)" insteed.
+把aaa:bbb 中間的冒號讀成”且“
+*/
+header p:first-child {
+  color: #ad1010;
+}
+/* ______________________________________________________________________ */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  /* 懸停於超連結上 */
+  color: orangered;
+  font-style: bold;
+  text-decoration: underline orangered;
+}
+
+a:active {
+  /*點擊超連結時的特效*/
+  background-color: black;
+  font-style: italic;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+/* ______________________________________________________________________ */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+p::first-line {
+  color: #ad1010;
+}
+/* ______________________________________________________________________ */
+h2 {
+  position: relative;
+  /* background-color: black; */
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -20px;
+}
+/* ______________________________________________________________________ */
+/* Devtool
+  透過command+option + i ，檢查網頁代碼，可以透過filter強制開啟懸停、點擊，等等按鈕
+  just for edge case, you can use "!important" to place the code to first-order */
+
+/* ______________________________________________________________________ */
+/* 38. csstheory #4 */
+/* 廂型元素有一些特質可以運作，例如寬度
+    但是inline元素則無法問用寬度等信直界定
+
+    <a> 是一個inline 元素，因此margin 只能提供他左右的寬度
+*/
+/* 
+  兩者可以互換，透過
+  display: inline/block     / inline-block
+  img.圖像 是inline element，他沒有上下寬度
+*/
+
+/* ______________________________________________________________________ */
+/* 40. pseudo-element */
+/* pseudo-class, use :        挑選出特定的「階層」，設定特別的值
+  pseudo-element, use ::      挑選出特定的「元素」，設定特別的值
+                              並且可以追加元素在他之前或之後，e.g. line 192
+*/
+/* 
+adjacent sibiling, 挑選出標題之下的p，例如，h3 + p {}
+*/
+/* 
+h2::after(or before) 
+調整加入元素，的位置在h2的前還是後
+*/
