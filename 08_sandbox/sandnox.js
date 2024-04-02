@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 function printVariable() {
   var variable = 1;
   console.log(`printG: `, variable);
