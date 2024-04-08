@@ -48,9 +48,48 @@ messages={
 stations={"Songshan":19,"Nanjing Sanmin":18,"Taipei Arena":17,"Nanjing Fuxing":16,"Songjiang Nanjing":15,"Zhongshan":14,"Beimen":13,"Ximen":12,"Xiaonanmen":11,"Chiang Kai-Shek Memorial Hall":10,"Guting":9,"Taipower Building":8,"Gongguan":7,"Wanlong":6,"Jingmei":5,"Dapinglin":4,"Xiaobitan":3.1,"Qizhang":3,"Xindian City Hall":2,"Xindian":1}
 
 rebuild_messages = {}
+list=[]
 for k in messages.values():
     for i in stations.keys():
         if i in k:
-            rebuild_messages[k]=stations[i]
-            print(stations[i])
-print(rebuild_messages)
+            list.append(stations[i])
+
+# 0. 最初使用的方式，無法成功
+# rebuild_messages = {}
+# for k in messages.values():
+#     for i in stations.keys():
+#         if i in k:
+#             rebuild_messages[messages.keys()]=stations[i]
+#             print(stations[i])
+
+# 1. dictionary comprehension   行不通，無法合併list & dict
+# 出現問題：{'Leslie': 1, 'Bob': 1, 'Mary': 1, 'Copper': 1, 'Vivian': 1}
+# for n in list:
+#     for j in messages.keys():
+        # rebuild_messages[j] = n
+            # rebuild_messages={x: for (x,y) in messages.items()}
+            # rebuild_messages[k]=stations[i]
+            # print(stations[i])
+# rebuild_messages = {x:a for (x,y) in messages.items() for a in list}
+
+
+# 2. enumerate loop   行不通無法合併list & dict
+# 出現問題：{'Leslie': 1, 'Bob': 1, 'Mary': 1, 'Copper': 1, 'Vivian': 1}
+# for index, element1 in enumerate(list):
+#     for index, element2 in enumerate(messages.keys()):
+#         rebuild_messages[index] = element1
+
+# 3. enumerate loop + comprehension  行不通無法合併list & dict
+# 出現問題：{'Leslie': 1, 'Bob': 1, 'Mary': 1, 'Copper': 1, 'Vivian': 1}
+# rebuild_messages = {index: element for index, element in enumerate(list)}
+# for n in list:
+#     for j in messages.keys():
+        # rebuild_messages[j] = n
+            
+# 4. zip 大成功！！
+rebuild_messages = dict(zip(messages.keys(), list))
+
+# print(list)
+# print(rebuild_messages)
+for n in rebuild_messages:
+    print(rebuild_messages[n])
