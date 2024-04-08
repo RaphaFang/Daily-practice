@@ -88,12 +88,24 @@
 # window.mainloop()
 
 
-dictionary = {
-   'Novel': 'Pride and Prejudice',
-   'year': '1813',
-   'author': 'Jane Austen',
-   'character': 'Elizabeth Bennet'
-}
+# dictionary = {
+#    'Novel': 'Pride and Prejudice',
+#    'year': '1813',
+#    'author': 'Jane Austen',
+#    'character': 'Elizabeth Bennet'
+# }
 
-for keys, value in dictionary.items():
-   print(keys)
+# for keys, value in dictionary.items():
+#    print(keys)
+
+def test(d):
+    # print( max(d, key=d.get))
+    print( min(d, key=d.get))
+
+students = {
+    'Theodore': 19,
+    'Roxanne': 22,
+    'Mathew': 21,
+    'Betty': 20
+}
+print(test(students))
