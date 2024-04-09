@@ -99,8 +99,8 @@
 #    print(keys)
 
 def test(d):
-    # print( max(d, key=d.get))
-    print( min(d, key=d.get))
+    global key
+    return max(d, key=d.get)
 
 students = {
     'Theodore': 19,
@@ -109,3 +109,4 @@ students = {
     'Betty': 20
 }
 print(test(students))
+print(key)
