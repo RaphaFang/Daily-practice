@@ -2,6 +2,7 @@ THEME_COLOR = "#375362"
 from tkinter import *
 from d34_03_quiz_brain import QuizBrain
 
+# Type Hint
 # 309. 可以定義變數的「type」， age = int  /  name = str
 # 如下方 quiz_brain:QuizBrain
 # 也可以在func 後面加上 def a_unc() -> bool
@@ -30,9 +31,9 @@ class QuizInterFace:
         true_img = PhotoImage(file="3_python_100daysChallenge/d34_qizzProject_API/images/true.png")
         false_img = PhotoImage(file="3_python_100daysChallenge/d34_qizzProject_API/images/false.png")
         
-        self.true_button = Button(image=true_img, highlightthickness=0) 
+        self.true_button = Button(image=true_img, highlightthickness=0, command = self.true_pressed()) 
         self.true_button.grid(row=2, column=0)
-        self.false_button = Button(image=false_img, highlightthickness=0)
+        self.false_button = Button(image=false_img, highlightthickness=0, command=self.false_pressed())
         self.false_button.grid(row=2, column=1)
 
         self.get_next_question()
@@ -42,3 +43,9 @@ class QuizInterFace:
     def get_next_question(self):
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=q_text)
+
+    def true_pressed(self):
+        self.quiz.check_answer("True")
+        
+    def false_pressed(self):
+        self.quiz.check_answer("False")
