@@ -1,7 +1,7 @@
 from question_model import Question
 from d34_02_data import question_data
 from d34_03_quiz_brain import QuizBrain
-from d43_04_ui import QuizInterFace
+from d34_04_ui import QuizInterFace
 
 question_bank = []
 for question in question_data:
@@ -12,6 +12,7 @@ for question in question_data:
 
 
 quiz = QuizBrain(question_bank)
+quiz_ui = QuizInterFace()
 
 # while quiz.still_has_questions():
 #     quiz.next_question()
