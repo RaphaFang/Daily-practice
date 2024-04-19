@@ -1,6 +1,9 @@
 import requests
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 277db96 (weerwd)
 # parameters = {
 #     "amount":10,
 #     "type":"boolean",
@@ -115,6 +118,7 @@ question_data = [
 ]
 
 
+<<<<<<< HEAD
 
 =======
 para = {
@@ -127,3 +131,6 @@ response.raise_for_status()
 data = response.json()
 question_data = data["results"]
 >>>>>>> 0636eb7 (first commit)
+=======
+
+>>>>>>> 277db96 (weerwd)

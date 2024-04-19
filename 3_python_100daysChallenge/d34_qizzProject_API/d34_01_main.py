@@ -9,8 +9,12 @@ from quiz_brain import QuizBrain
 >>>>>>> 0636eb7 (first commit)
 =======
 from d34_03_quiz_brain import QuizBrain
+<<<<<<< HEAD
 from d43_04_ui import QuizInterFace
 >>>>>>> d67cf4d (first commit)
+=======
+from d34_04_ui import QuizInterFace
+>>>>>>> 277db96 (weerwd)
 
 question_bank = []
 for question in question_data:
@@ -22,6 +26,9 @@ for question in question_data:
 
 quiz = QuizBrain(question_bank)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 277db96 (weerwd)
 quiz_ui = QuizInterFace()
 
 # while quiz.still_has_questions():
@@ -41,6 +48,10 @@ print("You've completed the quiz")
 print(f"Your final score was: {quiz.score}/{quiz.question_number}")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 =======
 >>>>>>> 0636eb7 (first commit)
+=======
+ 
+>>>>>>> 277db96 (weerwd)
