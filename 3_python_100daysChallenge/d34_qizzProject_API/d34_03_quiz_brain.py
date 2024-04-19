@@ -15,41 +15,26 @@ class QuizBrain:
         self.current_question = self.question_list[self.question_number]
         self.question_number += 1
         q_text = html.unescape(self.current_question.text)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 277db96 (weerwd)
+
 
         return f"Q.{self.question_number}: {q_text} (True/False): "
         # user_answer = input(f"Q.{self.question_number}: {q_text} (True/False): ")
         # self.check_answer(user_answer)
-<<<<<<< HEAD
-=======
+
         user_answer = input(f"Q.{self.question_number}: {q_text} (True/False): ")
         self.check_answer(user_answer)
->>>>>>> d67cf4d (first commit)
-=======
->>>>>>> 277db96 (weerwd)
+
 
     def check_answer(self, user_answer):
         correct_answer = self.current_question.answer
         if user_answer.lower() == correct_answer.lower():
             self.score += 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-            return True
-        else:
-            return False
-=======
-            print("You got it right!")
-        else:
-            print("That's wrong.")
 
-        print(f"Your current score is: {self.score}/{self.question_number}")
-        print("\n")
->>>>>>> d67cf4d (first commit)
-=======
             return True
         else:
             return False
->>>>>>> 277db96 (weerwd)
+
+        # print(f"Your current score is: {self.score}/{self.question_number}")
+        # print("\n")
+
+
