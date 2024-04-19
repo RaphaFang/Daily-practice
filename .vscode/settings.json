@@ -40,7 +40,14 @@
   "C_Cpp_Runner.compilerArgs": [],
   "C_Cpp_Runner.linkerArgs": [],
   "C_Cpp_Runner.includePaths": [],
+<<<<<<< HEAD
   "C_Cpp_Runner.includeSearch": ["*", "**/*"],
+=======
+  "C_Cpp_Runner.includeSearch": [
+    "*",
+    "**/*"
+  ],
+>>>>>>> 0636eb7 (first commit)
   "C_Cpp_Runner.excludeSearch": [
     "**/build",
     "**/build/**",
@@ -54,6 +61,11 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
+<<<<<<< HEAD
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "liveServer.settings.port": 5501
 }
+=======
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
+}
+>>>>>>> 0636eb7 (first commit)

@@ -55,7 +55,10 @@ p {
 
 /* -------------------------- */
 /* CLASSES TO MAKE MODAL WORK */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0636eb7 (first commit)
 .hidden {
   display: none;
 }
