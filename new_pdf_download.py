@@ -1,16 +1,17 @@
-# phase a webpage after login, url = "https://www.zeczec.com/users/sign_in", email_blank = driver.find_element("id", "user_email"), email_blank.send_keys("nickmomo1524@gmail.com"), but it have a Cloudflare protection
-import time
+import subprocess
 
-def phase_a(driver):
-    driver.get("https://www.zeczec.com/users/sign_in")
-    email_blank = driver.find_element("id", "user_email")
-    email_blank.send_keys("nickmomo1524@gmail.com")
-    password_blank = driver.find_element("id", "user_password")
-    password_blank.send_keys("1aqzwx2s")
-    driver.find_element("name", "commit").click()
-    time.sleep(5)
-    return driver
+def set_static_ip(interface, ip_address, subnet_mask, router):
+    try:
+        # Configure the interface with the provided static IP address, subnet mask, and router
+        subprocess.check_output(f"sudo networksetup -setmanual {interface} {ip_address} {subnet_mask} {router}", shell=True)
+        print("Static IP address configured successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error configuring static IP address: {e}")
 
+# Example usage
+interface = "Wi-Fi"  # Replace with your interface name, e.g., "Wi-Fi" or "Ethernet"
+ip_address = "192.168.1.100"  # Replace with your desired IP address
+subnet_mask = "255.255.255.0"  # Replace with your subnet mask
+router = "192.168.1.1"  # Replace with your router IP address
 
-
-phase_a()
+set_static_ip(interface, ip_address, subnet_mask, router)
