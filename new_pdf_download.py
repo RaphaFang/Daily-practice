@@ -1,17 +1,10 @@
-import subprocess
+# pip install zenrows
+from zenrows import ZenRowsClient
 
-def set_static_ip(interface, ip_address, subnet_mask, router):
-    try:
-        # Configure the interface with the provided static IP address, subnet mask, and router
-        subprocess.check_output(f"sudo networksetup -setmanual {interface} {ip_address} {subnet_mask} {router}", shell=True)
-        print("Static IP address configured successfully.")
-    except subprocess.CalledProcessError as e:
-        print(f"Error configuring static IP address: {e}")
+client = ZenRowsClient("89046282b1402b11fe09b238bcb8a580acebe6bf")
+url = "https://www.zeczec.com/users/sign_in"
+params = {"premium_proxy":"true","proxy_country":"tw","antibot":"true", "premium_proxy":"true",  "js_render":"true","autoparse":"true"}
 
-# Example usage
-interface = "Wi-Fi"  # Replace with your interface name, e.g., "Wi-Fi" or "Ethernet"
-ip_address = "192.168.1.100"  # Replace with your desired IP address
-subnet_mask = "255.255.255.0"  # Replace with your subnet mask
-router = "192.168.1.1"  # Replace with your router IP address
+response = client.get(url, params=params)
 
-set_static_ip(interface, ip_address, subnet_mask, router)
+print(response.text)
