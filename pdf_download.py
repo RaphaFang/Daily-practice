@@ -27,6 +27,13 @@ from selenium.webdriver.common.by import By
 # from selenium.webdriver.common.keys import Keys
 import time
 # from selenium.webdriver.chrome.options import Options
+from zenrows import ZenRowsClient
+
+client = ZenRowsClient("89046282b1402b11fe09b238bcb8a580acebe6bf")
+url = "https://www.zeczec.com/users/sign_in"
+params = {"premium_proxy":"true","proxy_country":"tw"}
+
+response = client.get(url, params=params)
 
 url = "https://www.zeczec.com/users/sign_in"
 driver = webdriver.Chrome()
@@ -46,14 +53,18 @@ time.sleep(10 )
 # check_button.click()
 time.sleep( 15 )
 time.sleep( 15 )
-# i can't get through the "cloudflare" robot check, why
-# i can't get through the "cloudflare" robot check, why
+
 
 # driver.implicitly_wait(10) # seconds
 
-driver.save_screenshot("test.png")
+# driver.save_screenshot("test.png")
 
 
 
+
+print(response.text)
+
+
+# ------------------------------------------------------------------------------------------------------------------------------
 # selenium 已經更新了，所以一些就無張的func 不會work
 #         https://stackoverflow.com/questions/72773206/selenium-python-attributeerror-webdriver-object-has-no-attribute-find-el
