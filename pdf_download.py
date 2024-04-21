@@ -122,16 +122,31 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 url = "https://www.zeczec.com/users/sign_in"
+# url = "https://www.zeczec.com/"
 driver = webdriver.Chrome()
 driver.get(url)
 
-email_blank = driver.find_element("id", "user_email")
+email_blank = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(("id", "user_email")))
 email_blank.send_keys("nickmomo1524@gmail.com")
+# time.sleep(30)
 
-password_blank = driver.find_element("id", "user_password")
+password_blank = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(("id", "user_password")))
 password_blank.send_keys("1aqzwx2s")
+# time.sleep(30)
+
 button = driver.find_element("name", "commit")
 button.click()
+
+# time.sleep(60)
+personal_bar_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(("type", "button")))
+# personal_bar_btn = driver.find_element("aria-label", "個人選單")
+personal_bar_btn.click()
+time.sleep(30)
+
+donated_record = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(("href","/account")))
+# donated_record = driver.find_element("href","/account")
+donated_record.click()
+
 
 # Wait for the checkbox to appear and click it
 # check_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@type='checkbox']")))
