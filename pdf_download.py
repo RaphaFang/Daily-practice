@@ -137,15 +137,33 @@ password_blank.send_keys("1aqzwx2s")
 button = driver.find_element("name", "commit")
 button.click()
 
-# time.sleep(60)
-personal_bar_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(("type", "button")))
-# personal_bar_btn = driver.find_element("aria-label", "個人選單")
-personal_bar_btn.click()
-time.sleep(30)
+import urllib.request as request
+import bs4
+new_url = "https://www.zeczec.com/"
+req = request.Request(
+    new_url, headers={'User-Agent': 'Mozilla/5.0'}#,'cookie':'over18=1'}
+)
 
-donated_record = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(("href","/account")))
-# donated_record = driver.find_element("href","/account")
-donated_record.click()
+with request.urlopen(req) as response:
+    webpage = bs4.BeautifulSoup(response.read().decode('utf-8'), features="html.parser")
+blocks = webpage.find("button", class_="js-activatable-trigger")
+print(blocks)
+
+    # for block in blocks:
+    #     sub_webpage_data_list=[]
+    #     title = block.find("div", class_="title")
+    #     number_count = block.find("div", class_="nrec")
+
+
+# # time.sleep(60)
+# personal_bar_btn = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(("type", "button")))
+# # personal_bar_btn = driver.find_element("aria-label", "個人選單")
+# personal_bar_btn.click()
+# time.sleep(30)
+
+# donated_record = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(("href","/account")))
+# # donated_record = driver.find_element("href","/account")
+# donated_record.click()
 
 
 # Wait for the checkbox to appear and click it
