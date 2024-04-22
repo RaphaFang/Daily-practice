@@ -172,10 +172,25 @@ print(blocks)
 # check_button.click()
 
 time.sleep(30)
+# ------------------------------------------------------------------------------------------------------------------------------
+# 網頁暫放區域
+# ------------------------------------------------------------------------------------------------------------------------------
+# https://medium.com/marketingdatascience/selenium%E6%95%99%E5%AD%B8-%E4%B8%80-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webdriver-send-keys-988816ce9bed
+# https://medium.com/marketingdatascience/selenium%E6%95%99%E5%AD%B8-%E4%B8%80-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8webdriver-send-keys-988816ce9bed
+# https://selenium-python-zh.readthedocs.io/en/latest/getting-started.html
 
+# 一些func 已經改動了
+# https://stackoverflow.com/questions/72773206/selenium-python-attributeerror-webdriver-object-has-no-attribute-find-el
+# https://ithelp.ithome.com.tw/articles/10300961
 
+# https://stackoverflow.com/questions/48365252/how-to-find-element-using-type-in-selenium-and-python
 
+# 別人的半成品
+# https://hackmd.io/@iampatrick/ryaJIdbX5
 
+# 似乎是最佳解的方式
+# https://www.zenrows.com/blog/selenium-stealth#conclusion
+# https://app.zenrows.com/builder
 # ------------------------------------------------------------------------------------------------------------------------------
 # selenium 已經更新了，所以一些就無張的func 不會work
 #         https://stackoverflow.com/questions/72773206/selenium-python-attributeerror-webdriver-object-has-no-attribute-find-el
