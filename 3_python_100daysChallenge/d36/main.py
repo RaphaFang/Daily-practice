@@ -18,17 +18,19 @@ print(stock_api)
 stock_para = {
     "function":"TIME_SERIES_INTRADAY",
     "symbol":STOCK_NAME,
-    "appid" : "a44068740825277d74e1b162dd339228",
     "interval":"60min",
     "apikey":stock_api
 }
 response = requests.get(STOCK_ENDPOINT, params=stock_para)
 response.raise_for_status()
-data = response.json()  # 如果不加上json() ，會得出 <Response [200]>
+data = response.json()['Time Series (60min)']  # 如果不加上json() ，會得出 <Response [200]>
 
+data = [value for (key, value) in data.items()]
 
-yesterday_closing_price = data['Time Series (60min)']['2024-04-26 19:00:00']['4. close']
-yyesterday_closing_price = data['Time Series (60min)']['2024-04-26 19:00:00']['4. close']
+yesterday_closing_price = data[0]['4. close']
+yyesterday_closing_price = data[16]['4. close']
+print(yesterday_closing_price,yyesterday_closing_price)
+
 # news_para = {
 #     "q" :STOCK_NAME,
 #     "lon" :121.41909206086044,
