@@ -24,9 +24,3 @@ if (name === "Nick") {
 // if you declare the variable "after" the function, it could be alert
 
 // this 96._________________________________________________
-// (4:00)
-// 他提到，如果沒有用uss strict，this會叫道 windows，尤其在寫網頁的script
-// (5:22)
-// 如果用在Eventlistener，那麼這個this會是DOM
-
-// this 97._________________________________________________
